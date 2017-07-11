@@ -1,6 +1,6 @@
 # Pet Shop Truffle Box
 
-This box has all you need to get started with our [Pet Shop tutorial](http://trufflesuite.com/tutorials/pet-shop).
+This box has all you need to get started with our [Pet Shop tutorial](http://truffleframework.com/tutorials/pet-shop).
 
 ## Installation
 
