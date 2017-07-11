@@ -25,3 +25,5 @@ This box has all you need to get started with our [Pet Shop tutorial](http://tru
     ```javascript
     npm run dev
     ```
+
+**NOTE**: This box is not a complete dapp, but the starting point for the [Pet Shop tutorial](http://truffleframework.com/tutorials/pet-shop). You'll need to complete that for this to function.
