@@ -62,4 +62,6 @@ App = {
 };
 
 // initialize the app
-$(() => $(window).load(() => App.init()))
+$(() =>
+  $(window).load(() => App.init())
+)
