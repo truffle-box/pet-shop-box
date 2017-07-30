@@ -2,28 +2,28 @@ App = {
   web3Provider: null,
   contracts: {},
 
-  init: function() {
+  init() {
     // Load pets.
-    $.getJSON('../pets.json', function(data) {
-      var petsRow = $('#petsRow');
-      var petTemplate = $('#petTemplate');
+    $.getJSON('../pets.json', pets => {
+      const petsRow = $('#petsRow')
+      const petTemplate = $('#petTemplate')
 
-      for (i = 0; i < data.length; i ++) {
-        petTemplate.find('.panel-title').text(data[i].name);
-        petTemplate.find('img').attr('src', data[i].picture);
-        petTemplate.find('.pet-breed').text(data[i].breed);
-        petTemplate.find('.pet-age').text(data[i].age);
-        petTemplate.find('.pet-location').text(data[i].location);
-        petTemplate.find('.btn-adopt').attr('data-id', data[i].id);
+      pets.forEach(pet => {
+        petTemplate.find('.panel-title').text(pet.name)
+        petTemplate.find('img').attr('src', pet.picture)
+        petTemplate.find('.pet-breed').text(pet.breed)
+        petTemplate.find('.pet-age').text(pet.age)
+        petTemplate.find('.pet-location').text(pet.location)
+        petTemplate.find('.btn-adopt').attr('data-id', pet.id)
 
-        petsRow.append(petTemplate.html());
-      }
-    });
+        petsRow.append(petTemplate.html())
+      })
+    })
 
-    return App.initWeb3();
+    return App.initWeb3()
   },
 
-  initWeb3: function() {
+  initWeb3() {
     /*
      * Replace me...
      */
@@ -31,7 +31,7 @@ App = {
     return App.initContract();
   },
 
-  initContract: function() {
+  initContract() {
     /*
      * Replace me...
      */
@@ -39,21 +39,21 @@ App = {
     return App.bindEvents();
   },
 
-  bindEvents: function() {
+  bindEvents() {
     $(document).on('click', '.btn-adopt', App.handleAdopt);
   },
 
   handleAdopt: function() {
     event.preventDefault();
 
-    var petId = parseInt($(event.target).data('id'));
+    const petId = parseInt($(event.target).data('id'));
 
     /*
      * Replace me...
      */
   },
 
-  markAdopted: function(adopters, account) {
+  markAdopted(adopters, account) {
     /*
      * Replace me...
      */
@@ -61,8 +61,5 @@ App = {
 
 };
 
-$(function() {
-  $(window).load(function() {
-    App.init();
-  });
-});
+// initialize the app
+$(() => $(window).load(() => App.init()))
