@@ -43,17 +43,17 @@ App = {
     $(document).on('click', '.btn-adopt', App.handleAdopt);
   },
 
-  handleAdopt: function() {
-    event.preventDefault();
-
-    var petId = parseInt($(event.target).data('id'));
-
+  markAdopted: function(adopters, account) {
     /*
      * Replace me...
      */
   },
 
-  markAdopted: function(adopters, account) {
+  handleAdopt: function() {
+    event.preventDefault();
+
+    var petId = parseInt($(event.target).data('id'));
+
     /*
      * Replace me...
      */
