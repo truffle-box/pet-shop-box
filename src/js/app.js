@@ -49,7 +49,7 @@ App = {
      */
   },
 
-  handleAdopt: function() {
+  handleAdopt: function(event) {
     event.preventDefault();
 
     var petId = parseInt($(event.target).data('id'));
