@@ -43,7 +43,7 @@ App = {
     $(document).on('click', '.btn-adopt', App.handleAdopt);
   },
 
-  markAdopted: function(adopters, account) {
+  markAdopted: function() {
     /*
      * Replace me...
      */
