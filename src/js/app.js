@@ -2,7 +2,7 @@ App = {
   web3Provider: null,
   contracts: {},
 
-  init: function() {
+  init: async function() {
     // Load pets.
     $.getJSON('../pets.json', function(data) {
       var petsRow = $('#petsRow');
@@ -20,10 +20,10 @@ App = {
       }
     });
 
-    return App.initWeb3();
+    return await App.initWeb3();
   },
 
-  initWeb3: function() {
+  initWeb3: async function() {
     /*
      * Replace me...
      */
