@@ -2,28 +2,31 @@ App = {
   web3Provider: null,
   contracts: {},
 
-  init: async function() {
-    // Load pets.
-    $.getJSON('../pets.json', function(data) {
-      var petsRow = $('#petsRow');
-      var petTemplate = $('#petTemplate');
-
-      for (i = 0; i < data.length; i ++) {
-        petTemplate.find('.panel-title').text(data[i].name);
-        petTemplate.find('img').attr('src', data[i].picture);
-        petTemplate.find('.pet-breed').text(data[i].breed);
-        petTemplate.find('.pet-age').text(data[i].age);
-        petTemplate.find('.pet-location').text(data[i].location);
-        petTemplate.find('.btn-adopt').attr('data-id', data[i].id);
-
-        petsRow.append(petTemplate.html());
-      }
-    });
+  init: async function () {
+    // Load pets
+    fetch("pets.json")
+      .then(async (data) => {
+        var json = await data.json();
+        var petsRow = document.getElementById('petsRow');
+        var petTemplate = document.getElementById('petTemplate');
+        json.forEach((data) => {
+          let newPetTemplate = petTemplate.cloneNode(true);
+          newPetTemplate.style.display = "block";
+          newPetTemplate.querySelector('.card-header').innerHTML = data.name;
+          newPetTemplate.querySelector('img').src = data.picture;
+          newPetTemplate.querySelector('.pet-breed').innerHTML = data.breed;
+          newPetTemplate.querySelector('.pet-age').innerHTML = data.age;
+          newPetTemplate.querySelector('.pet-location').innerHTML = data.location;
+          newPetTemplate.querySelector('.btn-adopt').setAttribute('data-id', data.id);
+          petsRow.appendChild(newPetTemplate);
+        })
+      })
+      .catch(err => console.log(err));
 
     return await App.initWeb3();
   },
 
-  initWeb3: async function() {
+  initWeb3: async function () {
     /*
      * Replace me...
      */
@@ -31,7 +34,7 @@ App = {
     return App.initContract();
   },
 
-  initContract: function() {
+  initContract: function () {
     /*
      * Replace me...
      */
@@ -39,20 +42,26 @@ App = {
     return App.bindEvents();
   },
 
-  bindEvents: function() {
-    $(document).on('click', '.btn-adopt', App.handleAdopt);
+  bindEvents: function () {
+    // Let the DOM Load
+    setTimeout(() => {
+      var btns = document.getElementsByClassName("btn-adopt");
+      Array.from(btns).forEach(function(btn) {
+        btn.addEventListener('click', App.handleAdopt);
+      });
+    },70);
   },
 
-  markAdopted: function() {
+  markAdopted: function () {
     /*
      * Replace me...
      */
   },
 
-  handleAdopt: function(event) {
+  handleAdopt: function (event) {
     event.preventDefault();
 
-    var petId = parseInt($(event.target).data('id'));
+    var petId = parseInt(this.getAttribute('data-id'));
 
     /*
      * Replace me...
@@ -61,8 +70,6 @@ App = {
 
 };
 
-$(function() {
-  $(window).load(function() {
-    App.init();
-  });
-});
+window.onload = () => {
+  App.init();
+}
