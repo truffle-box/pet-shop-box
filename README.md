@@ -1,6 +1,6 @@
 # Pet Shop Truffle Box
 
-This box has all you need to get started with our [Pet Shop tutorial](http://truffleframework.com/tutorials/pet-shop).
+This box has all you need to get started with our [Pet Shop tutorial](http://truffleframework.com/tutorial).
 
 ## Installation
 
@@ -31,7 +31,7 @@ This box has all you need to get started with our [Pet Shop tutorial](http://tru
     npm run dev
     ```
 
-**NOTE**: This box is not a complete dapp, but the starting point for the [Pet Shop tutorial](http://truffleframework.com/tutorials/pet-shop). You'll need to complete that for this to function.
+**NOTE**: This box is not a complete dapp, but the starting point for the [Pet Shop tutorial](http://truffleframework.com/tutorial). You'll need to complete that for this to function.
 
 ## FAQ
 
