@@ -1,6 +1,6 @@
 # Pet Shop Truffle Box
 
-This box has all you need to get started with our [Pet Shop tutorial](http://truffleframework.com/tutorial).
+This box has all you need to get started with our [Pet Shop tutorial](https://trufflesuite.com/tutorial/).
 
 ## Installation
 
@@ -31,10 +31,10 @@ This box has all you need to get started with our [Pet Shop tutorial](http://tru
     npm run dev
     ```
 
-**NOTE**: This box is not a complete dapp, but the starting point for the [Pet Shop tutorial](http://truffleframework.com/tutorial). You'll need to complete that for this to function.
+**NOTE**: This box is not a complete dapp, but the starting point for the [Pet Shop tutorial](https://trufflesuite.com/tutorial/). You'll need to complete that for this to function.
 
 ## FAQ
 
 * __How do I use this with the EthereumJS TestRPC?__
 
-    It's as easy as modifying the config file! [Check out our documentation on adding network configurations](http://truffleframework.com/docs/advanced/configuration#networks). Depending on the port you're using, you'll also need to update line 16 of `src/js/app.js`.
+    It's as easy as modifying the config file! [Check out our documentation on adding network configurations](https://trufflesuite.com/docs/truffle/reference/configuration/#networks). Depending on the port you're using, you'll also need to update line 16 of `src/js/app.js`.

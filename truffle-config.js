@@ -1,5 +1,5 @@
 module.exports = {
-  // See <http://truffleframework.com/docs/advanced/configuration>
+  // See <https://trufflesuite.com/docs/truffle/reference/configuration/>
   // for more about customizing your Truffle configuration!
   networks: {
     development: {
